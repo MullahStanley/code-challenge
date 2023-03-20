@@ -50,3 +50,37 @@ const licenseCheck=function(fn){
 }
 licenseCheck(speedDetector());
 //end of program
+
+//Challenge 3:Net Salary Calculator.
+/*Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. 
+Calculate the payee (i.e. Tax),
+ NHIFDeductions, 
+ NSSFDeductions, 
+ gross salary, and net salary.  */
+const basicPay=prompt('Enter basic salary: ');
+const benefits=prompt('Enter your benefits amount: ');
+const totalPay= basicPay+benefits;
+const NHIFDeductions=prompt('Enter NHIF deductions: ');
+const NSSFDeductions=prompt('Enter NSSF deductions: ');
+const deductions= NHIFDeductions+NSSFDeductions;
+//calculating Payee
+const payeeCalculator=function(totalPay){
+    //logic
+    if(totalPay<=24000){
+        return (totalPay*0.10)
+    }else if(totalPay>24000,totalPay<=32,333){
+        return(totalPay*0.25)
+    }else if(totalPay>32333){
+        return(totalPay*0.30)
+    }
+}
+payeeCalculator();
+const netSalary=function(totalPay,NHIFDeductions,NSSFDeductions){
+    let salary=totalPay-(`${NHIFDeductions}` + `${NSSFDeductions}`);
+    console.log(salary)
+}
+const grossSalary=function(basicPay,benefits){
+    totalPay=basicPay+benefits
+    return totalPay
+}
+grossSalary();
